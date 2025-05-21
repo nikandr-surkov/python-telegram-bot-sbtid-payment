@@ -23,6 +23,7 @@ with their Telegram IDs, providing a seamless experience without requiring datab
 Project Repository: https://github.com/nikandr-surkov/python-telegram-bot-sbtid-payment
 """
 
+import sys
 import os
 import logging
 import hashlib
@@ -50,7 +51,8 @@ except ImportError:
 
 # Configure logging
 logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+                   format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                   handlers=[logging.StreamHandler(stream=sys.stdout)])
 logger = logging.getLogger(__name__)
 
 """
